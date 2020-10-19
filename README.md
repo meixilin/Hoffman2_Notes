@@ -49,6 +49,9 @@ But there are other potential complexities. Some special nodes may require addit
 
 `for line in $(cat ~/list.of.nodes.txt); do (echo $line && qhost -F -h $line | grep 'slot\|h_data');done`  
 
+To look at the available jobs pending in your group: 
+`groupjobs` 
+
 # Jobs being killed due to memory issues.
 Beacuse Hoffman2 uses a linux system, it will look for the virtual memory of your job not h_data. \
 Sometimes the virtual memory is higher than the amount you have requested with `h_data=`. How much higher? It depends on the program as well as the 
