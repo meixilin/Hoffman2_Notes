@@ -11,7 +11,7 @@ You will notice that we have soemthing like:
 16 slots and ~252G per node  
 24 slots and ~63G per node  
 
-To list our **rwayne* node. Type fhe folowing:    
+To list our **rwayne* node. Type the folowing:    
 `qhost -l group=rwayne`  
 **Note**: acess this node with `highmem`
 
@@ -51,6 +51,14 @@ But there are other potential complexities. Some special nodes may require addit
 
 To look at the available jobs pending in your group: 
 `groupjobs` 
+
+## Troubleshooting:
+
+```
+qalter -w v <yourjobid>
+```
+
+This command lists the reasons why a job is not dispatchable in principle. For this purpose a dry scheduling run is performed with all consumable resources (including slots) considered to be fully available for this job and all load values are ignored.
 
 # Jobs being killed due to memory issues.
 Beacuse Hoffman2 uses a linux system, it will look for the virtual memory of your job not h_data. \
